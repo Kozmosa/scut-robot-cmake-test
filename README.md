@@ -1,14 +1,28 @@
 # CMake任务
 
-#### 考核标准
+## 要求
 
-1. 是否成功运行程序（50分）
-   + 若无法正常编译，此环节记0分，若运行内容异常，此环节记20分
-2. CMakeLists.txt编写能力与书写规范（50分）
+#### CMake 部分变量命名要求
 
-#### 要求
++ CMake 最小版本号：3.10
 
-具体要求参考《华南虎视觉组提前批任务》CMake篇。这里再提一嘴，仅允许使用Ubuntu作为开发平台。
++ 项目名：Test
+
++ 可执行文件名：server（对应server.cpp）、client（对应client.cpp）
+
++ 库目标名：与文件夹名一致		例如：
+
+  ```cmake
+  add_library(ABC ${ABC_DIR})
+  # 其中 ABC 文件夹如下
+  # ABC
+  # ├── include
+  # │   └── ABC.h
+  # └── src
+  #     └── ABC.cpp
+  ```
+
+
 
 #### 注意事项
 

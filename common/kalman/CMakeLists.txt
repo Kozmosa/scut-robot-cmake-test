@@ -4,3 +4,17 @@ list(APPEND kalman_INCLUDE_DIR "${OpenCV_INCLUDE_DIRS}")
 
 set(kalman_INCLUDE_DIRS ${kalman_INCLUDE_DIR}
                         CACHE PATH "kalman filter include directories")
+
+add_library(kalman INTERFACE)
+
+target_include_directories(kalman INTERFACE include)
+
+find_package(OpenCV REQUIRED)
+if(OpenCV_FOUND)
+    include_directories(${OpenCV_INCLUDE_DIRS}) 
+endif()
+
+target_link_libraries(kalman
+    INTERFACE
+    ${OpenCV_LIBS}
+)
